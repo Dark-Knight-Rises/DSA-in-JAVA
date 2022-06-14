@@ -26,9 +26,9 @@ public class LinkedList {
         if (isEmpty()) {
             return 0;
         }
-        int count = 1;
+        int count = 0;
         Node temp = start;
-        while (temp != last) {
+        while (temp != null) {
             count++;
             temp = temp.next;
         }
@@ -126,49 +126,6 @@ public class LinkedList {
                 p.prev = temp;
                 p = p.prev;
             }
-        }
-    }
-
-    public void makeCircular() {
-        if (size() == 1) {
-            start.prev = start;
-            start.next = start;
-        } else {
-            last.next = start;
-            start.prev = last;
-        }
-    }
-
-    public void displayCircular() {
-        Node temp = start;
-        System.out.print("X <--> ");
-        do {
-            System.out.print(temp.data + " <--> ");
-            temp = temp.next;
-        } while (temp != start);
-        System.out.println("X");
-    }
-
-    public void insertCircular(int pos, int val) {
-        Node newNode = new Node(val);
-        if (pos == 0) {
-            newNode.prev = last;
-            newNode.next = start;
-            last.next = newNode;
-            start.prev = newNode;
-            start = newNode;
-        } else {
-            Node temp = start;
-            for (int i = 0; i < pos - 1; i++) {
-                temp = temp.next;
-            }
-            newNode.next = temp.next;
-            newNode.prev = temp;
-            if (temp.next != null) {
-                temp.next.prev = newNode;
-            }
-            temp.next = newNode;
-            resetLast();
         }
     }
 
