@@ -4,9 +4,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
         int ch;
-        System.out.print("Enter the size of stack: ");
-        int size = in.nextInt();
-        Stack stack = new Stack(size);
+        Stack stack = new Stack();
         while (true) {
             System.out.println("========================================");
             System.out.print("1: GEt size \t");
@@ -48,7 +46,7 @@ public class App {
                     break;
                 }
                 case 7: {
-                    System.out.println("isfull? " + stack.isFull());
+                    // System.out.println("isfull? " + stack.isFull());
                     break;
                 }
                 case 8: {
