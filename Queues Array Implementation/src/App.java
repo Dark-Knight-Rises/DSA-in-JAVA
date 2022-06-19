@@ -2,38 +2,36 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // ValidParenthesis2 obj = new ValidParenthesis2();
-        // EvaluationOfPostfix obj = new EvaluationOfPostfix();
-        // InfixToPostfix obj = new InfixToPostfix();
-        // String s = "35*62/+4-";
-        // System.out.println("Postfix: " + obj.evaluate(s));
-        ImplementQueuesUsingStack q = new ImplementQueuesUsingStack();
         Scanner in = new Scanner(System.in);
         int ch;
+        System.out.print("Enter the size of queue: ");
+        int size = in.nextInt();
+        Queues q = new Queues(size);
         while (true) {
             System.out.println("========================================");
-            System.out.print("1: x \t");
-            System.out.println("2: x");
-            System.out.print("3: x \t");
+            System.out.print("1: Get size \t");
+            System.out.println("2: display");
+            System.out.print("3: peek \t");
             System.out.println("4: dequeue");
             System.out.print("5: enqueue \t");
             System.out.println("6: isEMpty?");
-            System.out.println("7: Exit");
+            System.out.print("7: isFull? \t");
+            System.out.println("8: Exit");
             System.out.print("enter your choice: ");
             ch = in.nextInt();
             System.out.println("========================================");
             switch (ch) {
                 case 1: {
-                    // System.out.println("size: " + q.getSize());
+                    System.out.println("size: " + q.getSize());
 
                     break;
                 }
                 case 2: {
-                    // q.display();
+                    q.display();
                     break;
                 }
                 case 3: {
-                    // System.out.println("Peek: " + q.peek());
+                    System.out.println("Peek: " + q.peek());
                     break;
                 }
                 case 4: {
@@ -49,6 +47,10 @@ public class App {
                     break;
                 }
                 case 7: {
+                    System.out.println("isfull? " + q.isFull());
+                    break;
+                }
+                case 8: {
                     System.out.println("exiting...");
                     System.exit(0);
                 }
