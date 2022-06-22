@@ -1,8 +1,8 @@
-public class Node {
+public class BNode {
     int data;
-    Node lChild, rChild;
+    BNode lChild, rChild;
 
-    Node(int data) {
+    BNode(int data) {
         this.data = data;
         lChild = null;
         rChild = null;
