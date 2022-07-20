@@ -2,25 +2,25 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        BinaryTree tree = new BinaryTree();
         Scanner in = new Scanner(System.in);
         int ch;
+        BinarySearchTree tree = new BinarySearchTree();
         while (true) {
             System.out.println("===============================================");
-            System.out.print("1 : create\t");
+            System.out.print("1 : insert in bst\t");
             System.out.println("2 : display tree inORDER");
-            System.out.print("3 : display tree preORDER\t");
-            System.out.println("4 : display tree postORDER");
-            System.out.print("5 : display tree inORDER itreative\t");
-            System.out.println("6 : display level order");
-            System.out.print("7 : No. of nodes and height of the tree.\t");
+            System.out.print("3 : delete a node\t");
+            System.out.println("4 :XXXER");
+            System.out.print("5 : search in bst\t");
+            System.out.println("XXXer");
+            System.out.print("7 : XXX\t");
             System.out.println("8 : exit");
             System.out.print("enter choice: ");
             ch = in.nextInt();
             System.out.println("===============================================");
             switch (ch) {
                 case 1: {
-                    tree.create();
+                    tree.insert();
                     break;
                 }
                 case 2: {
@@ -28,26 +28,27 @@ public class App {
                     break;
                 }
                 case 3: {
-                    tree.preO();
+                    tree.delete();
                     break;
                 }
                 case 4: {
-                    tree.postO();
+                    // tree.postO();
                     break;
                 }
                 case 5: {
-                    tree.inOrderIterative();
-                    ;
+                    System.out.print("enter the element to search: ");
+                    int key = in.nextInt();
+                    System.out.println("element " + key + " found? " + tree.search(key));
                     break;
                 }
                 case 6: {
                     System.out.println("level order traversal");
-                    tree.levelOrder();
+                    // tree.levelOrder();
                     break;
                 }
                 case 7: {
                     // System.out.println("level order traversal");
-                    tree.getCountAndHeight();
+                    // tree.getCountAndHeight();
                     break;
                 }
                 case 8: {
