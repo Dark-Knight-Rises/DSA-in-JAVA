@@ -43,4 +43,14 @@ public class Chaining {
     private boolean isEmpty() {
         return start == null;
     }
+
+    public int search(int key) {
+        int op;
+        p = start;
+        while (p != null && key > p.data) {
+            p = p.next;
+        }
+        op = p != null ? p.data : -1;
+        return op == key ? op : -1;
+    }
 }

@@ -18,7 +18,8 @@ public class App {
             System.out.println("============================================");
             System.out.print("1: insert into hash table\t");
             System.out.println("2: display");
-            System.out.println("3: exit");
+            System.out.println("3: search");
+            System.out.println("4: exit");
             System.out.print("enter choice: ");
             key = in.nextInt();
             switch (key) {
@@ -44,6 +45,19 @@ public class App {
                     break;
                 }
                 case 3: {
+                    System.out.print("enter key to search: ");
+                    key = in.nextInt();
+                    int hash = h.getHash(key, size);
+                    int res = objs[hash].search(key);
+                    if (res != -1) {
+                        System.out.println("key: is found " + res);
+
+                    } else {
+                        System.out.println("not found");
+                    }
+                    break;
+                }
+                case 4: {
                     System.exit(0);
                     break;
                 }
